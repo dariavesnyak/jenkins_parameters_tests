@@ -33,8 +33,9 @@ dependencies {
     )
 }
 
-test {
+tasks.withType(Test) {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 
     testLogging {
         lifecycle {
@@ -47,5 +48,11 @@ test {
 task regress_test(type: Test) {
     useJUnitPlatform {
         includeTags("full_test")
+    }
+}
+
+task property_test(type: Test) {
+    useJUnitPlatform{
+        includeTags("property")
     }
 }
