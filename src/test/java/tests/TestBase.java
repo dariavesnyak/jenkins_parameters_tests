@@ -23,8 +23,6 @@ public class TestBase {
         Configuration.browserSize= System.getProperty("browserSize", "1920x1080");
 
 
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -35,6 +33,8 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
