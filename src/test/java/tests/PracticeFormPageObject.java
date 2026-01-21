@@ -19,7 +19,7 @@ public class PracticeFormPageObject extends TestBase{
     void fillFormTest() {
         step("Открыть форму", () -> {
             registrationPage.openPage();
-            jsSnippets.notVisibleBanners();
+            jsSnippets.removeBannersAndFooter();
         });
         step("Заполнить все поля формы", () -> {
             registrationPage.setFirstName("Daria");
@@ -58,7 +58,7 @@ public class PracticeFormPageObject extends TestBase{
     void minimumFillFormTest() {
         step("Открыть форму", () -> {
             registrationPage.openPage();
-            jsSnippets.notVisibleBanners();
+            jsSnippets.removeBannersAndFooter();
         });
         step("Заполнить только обязательные поля формы", () -> {
             registrationPage.setFirstName("Daria");
@@ -83,7 +83,7 @@ public class PracticeFormPageObject extends TestBase{
     void negativeTest() {
         step("Открыть форму", () -> {
             registrationPage.openPage();
-            jsSnippets.notVisibleBanners();
+            jsSnippets.removeBannersAndFooter();
         });
         step("Заполнить только одно поле с вводом имени", () -> {
             registrationPage.setFirstName("Daria");

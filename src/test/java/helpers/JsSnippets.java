@@ -4,7 +4,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class JsSnippets {
 
-    public void notVisibleBanners() {
+    public static void removeBannersAndFooter() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
     }
